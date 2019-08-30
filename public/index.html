@@ -1,14 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Node test</title>
-</head>
-<body>
 
-  Node test
-  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Monster ToDo</title>
+</head>
+
+<body>
+    <script>
+       let a = '<section>' +
+            '<div class="container">' +
+            '<div class="row">' +
+            '<div class="col-md-8">' +
+            '<div class="header">' +
+            '<div class="login">' +
+            '<h2 style="color: rgb(56, 133, 248)">Войти</h2>' +
+            '<form method="post" id="login-form"  action="index.html">' +
+            '<p>' +
+            '<input id="nic" type="text" name="nic" onkeyup="checkInputs()" value="" placeholder="Nickname">' +
+            '</p>' +
+            '<p>' +
+            '<input id="pass" type="password" name="password" value="" onkeyup="checkInputs()" placeholder="Пароль">' +
+            '</p>' +
+            '<button id="btn" type="button" class="btn btn-primary btn-lg">Welcome</button>' +
+            '</form>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<div class="col-md-4">' +
+            '<i class="fa fa-optin-monster fa-5x" aria-hidden="true">' +
+            '</i>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</section>';
+        document.body.innerHTML = a;
+
+       // работа кнопки если введены данные
+       let button = document.getElementById('btn')
+            button.disabled = true; // выключается
+            
+            function checkInputs() {
+               var nic = document.getElementById('nic').value,
+                pass = document.getElementById('pass').value
+                console.log(nic)
+                if(nic.length != 0  && pass.length !=0){
+                    console.log('check')
+                     button.disabled = false;// то кнопка включается
+                     button.onclick = async () => {
+                    let obj = { nic, pass }
+                    let json = JSON.stringify(obj)
+                    let res = await fetch('http://localhost:3000/users', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: json
+                    })
+                    console.log(await res.json())
+                    document.location.href = "todo.html"
+                    }
+                }
+                else{
+                    button.disabled = true;
+                }
+            }
+
+
+    </script>
+
 </body>
+
 </html>
+<style>
+    body {
+        background: linear-gradient(to top left, rgb(255, 249, 162), rgb(255, 214, 221));
+        width: 100%;
+        height: 100vh;
+    }
+
+    .login {
+        position: relative;
+        margin: 250px auto 0 auto;
+        padding: 20px 20px 20px;
+        width: 310px;
+    }
+
+    .fa-optin-monster {
+        color: black;
+        text-shadow: 0 0 6px rgb(87, 85, 85);
+        margin: 350px auto 0 50px;
+        width: 100px;
+        height: 100px;
+    }
+</style>
