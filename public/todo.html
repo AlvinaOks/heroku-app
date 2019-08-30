@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="main.css" rel="stylesheet">
+    <title>Monster ToDo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+    <script>
+
+let b='<section class="main-bar" id="navbar">'+
+        '<div class="container-fluid">'+
+            '<div class="row">'+
+                '<div class="col-12">'+
+                    '<nav class="navbar navbar-light navbar-custom static-top" style="background-color: transparent; width: 100%">'+
+                        '<a href="#" class="navbar-brand d-flex align-items-center phone-block">'+
+                            '<i class="fa fa-optin-monster" aria-hidden="true"></i>'+
+                            '<strong>Monster ToDo</strong>'+
+                        '</a>'+
+                   '</nav>'+
+                '</div>'+
+            '</div>'+
+        '</div>'+
+    '</section>'+
+'<div class="container-fluid">'+
+        '<div class="row">'+
+            '<div class="col-md-3">'+
+                '<div class="row">'+
+                    '<div class="col-12">'+
+                        '<div id="div30" class="header">'+
+                            '<h3>Привычка за 30 дней</h3>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="col-12">'+
+                        '<div style="display:inline-block">'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                        '</div>'+
+                        '<div style="display:inline-block">'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                        '</div>'+
+                        '<div style="display:inline-block">'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                        '</div>'+
+                        '<div style="display:inline-block">'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                        '</div>'+
+                        '<div style="display:inline-block">'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                            '<div class="white"></div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+            '<div id="myDIV" class="col-md-5">'+
+                '<div class="header">'+
+                    '<h2>My To Do List</h2>'+
+                    '<input type="text" id="myInput" placeholder="What would you like to do?">'+
+                    '<span onclick="newElement()" class="addBtn">Add</span>'+
+                '</div>'+
+                '<ul id="myUL">'+
+                    '<li>Помыть посуду</li>'+
+                    '<li class="checked">Медитация 5 минут</li>'+
+                    '<li>Позвонить родителям</li>'+
+                    '<li>План на завтра</li>'+
+                    '<li>Съездить за город</li>'+
+                '</ul>'+
+            '</div>'+
+            '<div class="col-md-3">'+
+                '<div class="row">'+
+                    '<div class="col-12">'+
+                        '<div id="divfilm" class="header">'+
+                            '<h2>Maybe some movie?</h2>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="col-6">'+
+                        '<div>'+
+                            '<h6>About love</h6>'+
+                            '<ul>'+
+                                '<small>'+
+                                    '<li class="films">Дневник Бриджет Джонс</li>'+
+                                    '<li class="films">Реальная любовь</li>'+
+                                    '<li class="films">Гордость и предубеждение</li>'+
+                                    '<li class="films">Дневник памяти</li>'+
+                                    '<li class="films">Спеши любить</li>'+
+                                '</small>'+
+                            '</ul>'+
+                            '<h6>About life</h6>'+
+                            '<ul>'+
+                                '<small>'+
+                                    '<li class="films">Вторая жизнь Уве</li>'+
+                                    '<li class="films">1+1</li>'+
+                                    '<li class="films">Джуно</li>'+
+                                    '<li class="films">Пока не сыгра в ящик</li>'+
+                                    '<li class="films">Жизнь прекрасна</li>'+
+                                '</small>'+
+                            '</ul>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="col-6">'+
+                        '<div>'+
+                            '<h6>About superheroes</h6>'+
+                            '<ul>'+
+                                '<small>'+
+                                    '<li class="films">Стражи галактики</li>'+
+                                    '<li class="films">Железный человек</li>'+
+                                    '<li class="films">Дедпул</li>'+
+                                    '<li class="films">Стартрек</li>'+
+                                    '<li class="films">Мстители</li>'+
+                                '</small>'+
+                            '</ul>'+
+                            '<h6>About gansters</h6>'+
+                            '<ul>'+
+                                '<small>'+
+                                    '<li class="films">Большой куш</li>'+
+                                    '<li class="films">Карты, деньги, два ствола</li>'+
+                                    '<li class="films">Рок-н-рольщик</li>'+
+                                    '<li class="films">Занесло</li>'+
+                                    '<li class="films">Крестный отец</li>'+
+                                '</small>'+
+                            '</ul>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+        '</div>'+
+    '</div>';
+    document.body.innerHTML = b;
+
+        //Зарисовка 30 дней 
+        let listdiv = document.getElementsByClassName("white");
+        for (var i = 0; i < listdiv.length; i++) {
+            listdiv[i].onclick = function () {
+                this.className = "black";
+            }
+        }
+
+        //TODO
+        //
+        // Create a "close" button and append it to each list item
+        let myNodelist = document.getElementsByTagName("LI");
+        for (var i = 0; i < myNodelist.length; i++) {
+            let span = document.createElement("SPAN");
+            let txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        let close = document.getElementsByClassName("close");
+        for (var i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+
+        // Add a "checked" symbol when clicking on a list item
+        let list = document.querySelector('ul');
+        list.addEventListener('click', function (ev) {
+            if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
+            }
+        }, false);
+
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+            }
+            document.getElementById("myInput").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                }
+            }
+        }
+
+        //FILMS
+        //
+        // Create a "close" button and append it to films
+        let myNodelist1 = document.getElementsByClassName("films");
+        for (var i = 0; i < myNodelist1.length; i++) {
+            let span1 = document.createElement("SPAN");
+            let txt1 = document.createTextNode("\u00D7");
+            span1.className = "close1";
+            span1.appendChild(txt1);
+            myNodelist1[i].appendChild(span1);
+        }
+        // Click on a close button to hide the current list
+        let close1 = document.getElementsByClassName("close1");
+        for (var i = 0; i < close1.length; i++) {
+            close1[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+
+
+//анимация
+        class Circles {
+            constructor(image, size) {
+                this.circles = this.create(image, size)
+            }
+
+            create(image, size) {
+                var img = document.createElement('img')
+                img.src = image
+                img.width = size
+                img.style.position = 'absolute'
+                img.style.top = `${this.random(0, window.innerHeight)}px`
+                img.style.left = `${this.random(0, window.innerWidth)}px`
+                img.style.transition = '10s all'
+                return img
+            }
+
+            random(min, max) {
+                return Math.floor((Math.random() * (max - min)) + min)
+            }
+
+            appendBody() {
+                document.body.appendChild(this.circles)
+            }
+
+            flex() {
+                var circles = this.circles
+                var random = this.random
+
+                function flexingCircles() {
+                    circles.style.top = `${random(0, window.innerHeight)}px`
+                    circles.style.left = `${random(0, window.innerWidth)}px`
+                    setTimeout(flexingCircles, random(700, 5000))
+                }
+
+                flexingCircles()
+            }
+        }
+
+        var circle1 = new Circles('c4.png', '40')
+        circle1.appendBody()
+        circle1.flex()
+
+        var circle2 = new Circles('c4.png', '20')
+        circle2.appendBody()
+        circle2.flex()
+
+        var circle3 = new Circles('c4.png', '150')
+        circle3.appendBody()
+        circle3.flex()
+
+        var circle4 = new Circles('c4.png', '100')
+        circle4.appendBody()
+        circle4.flex()
+
+        var circle5 = new Circles('c4.png', '70')
+        circle5.appendBody()
+        circle5.flex()
+
+        var circle6 = new Circles('c4.png', '40')
+        circle6.appendBody()
+        circle6.flex()
+
+        var circle7 = new Circles('c4.png', '30')
+        circle7.appendBody()
+        circle7.flex()
+
+
+//генирация фраз
+        function create(tag) {
+            return document.createElement(tag)
+        }
+        let div = create("div")
+        div.className = "contanier"
+        div.id="words"
+
+        let div1 = create("div")
+        div1.className = "row"
+
+        let div2 = create("div")
+        div2.className = "col-md-4"
+
+        let small=create("small")
+
+        let p = create("p")
+        p.id = 'text'
+
+        let input = create("input")
+        input.id = "generate"
+        input.type = "button"
+        input.className="btn btn-primary btn-lg"
+        input.value = "Узнать новое слово"
+
+document.body.appendChild(div)
+div.appendChild(div1)
+div1.appendChild(div2)
+div2.appendChild(small)
+small.appendChild(p)
+div2.appendChild(input)
+
+
+        function init() {
+
+            var text = function W() {
+                let words = ["Аддикция – зависимость, навязчивая потребность, ощущаемая человеком, подвигающая к определенной деятельности",
+                    "Алчность – жажда приобретательства (корыстолюбие, стяжательство, жадность)",
+                    "Амбивалентность – двойственность отношения к чему-либо, в особенности двойственность переживания, выражающаяся в том, что один объект вызывает у человека одновременно два противоположных чувства",
+                    "Амплификация – стилистическая фигура, представляющая собой ряд повторяющихся речевых конструкций или отдельных слов",
+                    "Априори – знание, полученное до опыта и независимо от него",
+                    "Волюнтаризм – стремление реализовать желанные цели без учёта объективных обстоятельств и возможных последствий",
+                    "Гендерный – половой. Межгендерный, соответственно - межполовой. Гендерное равенство – равенство между полами",
+                    "Гипербола – намеренного преувеличение, с целью усиления выразительности и подчёркивания сказанной мысли",
+                    "Гипертекст – набор текстов, содержащих узлы перехода между ними, которые позволяют избирать читаемые сведения или последовательность чтения",
+                    "Гомогенный – однородный, равный, одинаковый",
+                    "Декадентство – упадничество, отход от общественности",
+                    "Диссидент – человек, политические взгляды которого существенно расходятся с официальными установлениями в стране, где он живёт; политически инакомыслящий",
+                    "Дисфемизм – грубое или непристойное обозначение изначально нейтрального понятия с целью придания ему негативной смысловой нагрузки или просто для усиления экспрессивности речи",
+                    "Идиосинкразия – непереносимость",
+                    "Импликация — бинарная логическая связка, по своему применению приближенная к союзам «если… то…»",
+                    "Инвективы – нецензурная, площадная брань, матерщина",
+                    "Инкорпорировать - объединение, включение в свой состав",
+                    "Клептомания – болезненное влечение к воровству (краже)",
+                    "Когнитивный диссонанс – состояние индивида, характеризующееся столкновением в его сознании противоречивых знаний, убеждений, поведенческих установокотносительно некоторого объекта или явления, при котором из существования одного элемента вытекает отрицание другого, и связанное с этим несоответствием ощущение неполноты жизни",
+                    "Конгруэнтность – состояние целостности и полной искренности, когда все части личности работают вместе, преследуя одну цель, согласованность информации, одновременно передаваемой человеком",
+                    "Консерватор – приверженец консервативных взглядов, противник прогресса и преобразований",
+                    "Метафизический – нечто, стоящее за пределами постигаемого опытом и/или являющееся сущностной основой постигаемого опытом",
+                    "Мономания – навязчивая или чрезмерная увлечённость одной идеей или субъектом, одностороннее однопредметное помешательство. Разновидность паранойи",
+                    "Ортодокс – человек ортодоксальных взглядов и убеждений; тот, кто последовательно, неуклонно придерживается основ какого-либо учения, мировоззрения",
+                    "Софистика – сознательное применение в споре или в доказательствах неправильных доводов",
+                    "Стохастика – беспорядочность",
+                    "Трансцендентальный – отвлеченный, абстрактный, академический, мысленный, умозрительный, умственный, теоретический",
+                    "Трюизм – избитая истина, банальность, общеизвестное мнение или высказывание",
+                    "Феромоны – биологические маркеры собственного вида, летучие хемосигналы, управляющие нейроэндокринными поведенческими реакциями, процессами развития, а также многими процессами, связанными с социальным поведением и размножением",
+                    "Фрустрация - обман, неудача, тщетное ожидание, расстройство, разрушение",
+                    "Эвфемизм - нейтральное по смыслу и эмоциональной «нагрузке» слово или описательное выражение, обычно используемое в текстах и публичных высказываниях для замены других, считающихся неприличными или неуместными, слов и выражений",
+                    "Эгоцентричный - человек, который во всех своих мыслях и поступках, сознательно или невольно, ставит в центр внимания собственное Я",
+                    "Эзотерика – сфера специфических взглядов о глубинно-мистической сути человеческой жизни",
+                    "Эклектика – смешение, соединение разнородных стилей, идей, взглядов",
+                    "Эндорфины – группа полипептидных химических соединений, которые естественным путем вырабатываются в нейронах головного мозга и обладают способностью уменьшать боль, аналогично опиатам, и влиять на эмоциональное состояние. Еще называют – гормоном счастья",
+                    "Эскалация – расширение, наращивание, постепенное усиление. Эскалация проблемы — означает вынос проблемы на обсуждение на более высокий уровень при невозможности её решения на текущем",
+                    "Abjure – отказываться, отрекаться",
+                    "Abrogate – объявлять недействительным, отменять (синоним – nullify)",
+                    "Abstemious – воздержанный, умеренный (синоним – moderate)",
+                    "Колливубл — урчание в животе от голода",
+                    "Acumen – проницательность, сообразительность (синоним – perspicacity)",
+                    "Antebellum – довоенный (имеется ввиду произошедший до гражданской войны в США (1861 г.))",
+                    "Auspicious – благоприятный (синоним – favourable)",
+                    "Дисания — это состояние, при котором тяжело с утра встать с постели",
+                    "Belie – искажать; разоблачать; оклеветать (синонимы – misrepresent, contradict, slander)",
+                    "Bellicose – воинственный, агрессивный (синонимы – militant, hostile)",
+                    "Bowdlerize – выбрасывать из книги все нежелательное. Термин произошел от имени профессора Т. Боудлера, который в 1818 году выпустил особое издание пьес Шекспира, где были опущены слова и выражения, которые нельзя произносить вслух при детях",
+                    "Chicanery – увиливание, сутяжничество",
+                    "Таблица Снеллена — таблица, применяемая для проверки остроты зрения",
+                    "Churlish – грубый, неприветливый (синоним – boorish, vulgar)",
+                    "Deleterious – вредоносный, опасный (синоним – harmful)",
+                    "Enervate – ослаблять, обессиливать (синоним – weaken)",
+                    "Enfranchise – предоставлять избирательные права; давать свободу",
+                    "Epiphany – Богоявление, Крещение Господне; прозрение, озарение",
+                    "Equinox – равноденствие",
+                    "Evanescent – исчезающий; мимолетный",
+                    "Expurgate – вычеркивать",
+                    "Facetious – шутливый, радостный"]
+                let rand = words[Math.floor(Math.random() * words.length)];
+                return rand
+            }
+            document.getElementById('generate').onclick =
+                function () {
+                    document.getElementById('text').innerHTML = text();
+                };
+        }
+        window.onload = init;
+    </script>
+
+
+</body>
+
+</html>
+<style>
+    body {
+        background: linear-gradient(to top left, rgb(255, 249, 162), rgb(255, 214, 221));
+        width: 100%;
+        height: 100vh;
+    }
+
+    div.white {
+        width: 15px;
+        height: 15px;
+        position: relative;
+        background-color: white;
+        border: 1px solid silver;
+        margin: 20px;
+    }
+
+    div.black {
+        width: 15px;
+        height: 15px;
+        position: relative;
+        background-color: white;
+        border: 1px solid silver;
+        margin: 20px;
+        background-color: black;
+
+    }
+
+    #todo {
+        margin: 0 auto;
+        width: 450px;
+    }
+
+    #myDIV {
+        margin: 3%
+    }
+#words{
+    padding: 12px 15px 12px 80px
+}
+    #myUL {
+        list-style-type: none;
+    }
+</style>
