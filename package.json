@@ -2,8 +2,8 @@
   "name": "heroku-app",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:mbkkong/heroku-app.git",
-  "author": "Maksim Black <mbkkong@gmail.com>",
+  "repository": "git@github.com:AlvinaOksa/heroku-app.git",
+  "author": "Alvina Oksa<alvina.vo@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "node app.js"
